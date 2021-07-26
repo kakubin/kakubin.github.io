@@ -21,7 +21,7 @@
     "nuxt": "^2.15.7",
     "push-dir": "^0.4.1",
     "raw-loader": "^4.0.2",
-    "sass": "^1.35.2",
+    "sass": "^1.36.0",
     "sass-loader": "^10.2.0",
     "vue-component-decorator": "^0.0.5",
     "vue-property-decorator": "^9.1.2"
