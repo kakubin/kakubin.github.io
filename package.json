@@ -15,19 +15,19 @@
     "@nuxtjs/style-resources": "^1.2.1",
     "@types/js-yaml": "^4.0.2",
     "@types/marked": "^2.0.4",
-    "@types/node": "^16.4.13",
+    "@types/node": "^16.6.1",
     "core-js": "^3.16.1",
     "node-sass": "^6.0.1",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.15.8",
     "push-dir": "^0.4.1",
     "raw-loader": "^4.0.2",
-    "sass": "^1.37.0",
+    "sass": "^1.38.0",
     "sass-loader": "^10.2.0",
     "vue-component-decorator": "^0.0.5",
     "vue-property-decorator": "^9.1.2"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.7",
+    "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "marked": "^2.1.3"
   }
