@@ -21,9 +21,7 @@ export default class MarkdownLoader extends Vue {
   markdownFilePath!: string
 
   get markdownRawText(): string {
-    const importedModule = require(`./../markdowns/${this.markdownFilePath}.md`)
-    const markdownRawText: string = importedModule.default
-    return markdownRawText
+    return require(`./../markdowns/${this.markdownFilePath}.md`).default
   }
 }
 </script>
