@@ -3,7 +3,7 @@
     <header class="site-header">
       <div class="header-container">
         <div class="header-title">
-          <NuxtLink to="/">Mrbigass</NuxtLink>
+          <NuxtLink to="/">Kakubin</NuxtLink>
         </div>
         <nav class="site-nav">
           <ul>

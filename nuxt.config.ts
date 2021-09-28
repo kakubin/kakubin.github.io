@@ -3,7 +3,7 @@ import fileList from './lib/entry_files';
 
 export default {
   head: {
-    title: 'mrbigass.github.io',
+    title: 'kakubin.github.io',
     htmlAttrs: {
       lang: 'ja'
     },

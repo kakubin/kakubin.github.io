@@ -1,5 +1,5 @@
 # about me
-mrbigass
+kakubin
 
 所属: 慶應大学理工学部管理工学科4年
 
@@ -17,6 +17,6 @@ mrbigass
 - シーシャ
 
 ## Account
-[GitHub](https://github.com/mrbigass) <br>
+[GitHub](https://github.com/kakubin) <br>
 [FaceBook](https://www.facebook.com/profile.php?id=100014104476423) <br>
 [Wantedly](https://www.wantedly.com/users/102510047)
