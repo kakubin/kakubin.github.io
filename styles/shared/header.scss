@@ -1,0 +1,52 @@
+.header {
+  background-color: #778899;
+}
+
+.header-container {
+  margin: 0 auto;
+  width: 760px;
+  padding-top: 30px;
+
+  @include sp {
+    width: 100%;
+    padding-top: 10px;
+  }
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 60px;
+  font-size: 3rem;
+
+  &:before {
+    content: '';
+    mask: url('../../public/whiskey.svg') center / contain;
+
+    position: absolute;
+    height: 42px;
+    right: 0;
+    top: calc(50% - 42px/2);
+    width: 30px;
+  }
+
+
+  @include sp {
+    height: 100%;
+  }
+}
+
+.site-nav {
+  height: 30px;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+
+    @include sp {
+      padding: 0;
+    }
+  }
+}
