@@ -7,6 +7,7 @@ kakubin
 ## Skill
 - Ruby(Ruby on Rails)
 - Nuxt.js
+- Next.js
 - TypeScript
 - vim
 
