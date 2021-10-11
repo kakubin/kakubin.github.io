@@ -8,12 +8,7 @@ on:
 
 jobs:
   build-test:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [14]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout 🛎
@@ -22,7 +17,7 @@ jobs:
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.4.0
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16
 
       - name: Get yarn cache directory path 🛠
         id: yarn-cache-dir-path
@@ -40,8 +35,5 @@ jobs:
       - name: Install dependencies 👨🏻💻
         run: yarn
 
-      - name: Generate test
-        run: yarn generate
-
-      # - name: Run tests 🧪
-      #   run: yarn test
+      - name: lint test
+        run: yarn lint
