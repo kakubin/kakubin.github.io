@@ -1,6 +1,10 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticPaths } from 'next'
 import { entryDateSet, entries } from '../../lib/entry_files'
 import marked from 'marked'
+
+type Props = {
+  entry: Entry
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = entryDateSet
@@ -13,15 +17,14 @@ export const getStaticProps = async ({ params }: { params: { date: string } }) =
   return { props: { entry } }
 }
 
-const EntryPage = ({ entry }: { entry: Entry }) => {
+const Markup = (content: string) => ({ __html: marked(content) })
+
+const EntryPage = ({ entry }: Props) => {
   return (
     <div className="entry-page">
       <div className="container">
-        <div className="entry-title">
-          {entry.title}
-        </div>
         <div className="entry-body">
-          {marked(entry.content)}
+          <div dangerouslySetInnerHTML={Markup(entry.content)} />
         </div>
       </div>
     </div>
