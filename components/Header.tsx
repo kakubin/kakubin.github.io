@@ -9,7 +9,7 @@ const Header: NextPage = () => {
         <Link href="/">
           <a className="header-title">
             <Image src="/whiskey.svg" alt="Vercel Logo" width={72} height={16} />
-            Kakubin's Blog
+            Kakubin&apos;s Blog
           </a>
         </Link>
         <div className="site-nav">
