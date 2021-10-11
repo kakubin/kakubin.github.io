@@ -1,6 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { entryDateSet, entries } from '../../lib/entry_files'
-import Layout from '../../components/Layout'
 import marked from 'marked'
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -16,18 +15,16 @@ export const getStaticProps = async ({ params }: { params: { date: string } }) =
 
 const EntryPage = ({ entry }: { entry: Entry }) => {
   return (
-    <Layout>
-      <div className="entry-page">
-        <div className="container">
-          <div className="entry-title">
-            {entry.title}
-          </div>
-          <div className="entry-body">
-            {marked(entry.content)}
-          </div>
+    <div className="entry-page">
+      <div className="container">
+        <div className="entry-title">
+          {entry.title}
+        </div>
+        <div className="entry-body">
+          {marked(entry.content)}
         </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 

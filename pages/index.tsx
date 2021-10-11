@@ -1,4 +1,3 @@
-import Layout from '../components/Layout'
 import EntryCard from '../components/EntryCard'
 import { entries } from '../lib/entry_files'
 
@@ -23,15 +22,13 @@ const Index = (props: Props) => {
   )
 
   return (
-    <Layout>
-      <div className="index-page">
-        <div className="container">
-          <div className="entry-cards">
-            {entryCards}
-          </div>
+    <div className="index-page">
+      <div className="container">
+        <div className="entry-cards">
+          {entryCards}
         </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 

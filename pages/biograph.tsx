@@ -1,10 +1,6 @@
-import Layout from '../components/Layout'
-
 const Biograph = () => {
   return (
-    <Layout>
-      <div>Biograph</div>
-    </Layout>
+    <div>Biograph</div>
   )
 }
 
