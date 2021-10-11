@@ -19,4 +19,4 @@ export const readMarkdown = (filepath: string) => {
   } as Entry
 }
 
-export const entries = entryFilepath.map(readMarkdown)
+export const entries = entryFilepath.map(readMarkdown).reverse()
