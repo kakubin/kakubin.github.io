@@ -1,5 +1,4 @@
 import { NextPage } from "next"
-import Image from 'next/image'
 import Link from 'next/link'
 
 const Header: NextPage = () => {
@@ -8,7 +7,6 @@ const Header: NextPage = () => {
       <div className="header-container">
         <Link href="/">
           <a className="header-title">
-            <Image src="/whiskey.svg" alt="Vercel Logo" width={72} height={16} />
             Kakubin&apos;s Blog
           </a>
         </Link>
