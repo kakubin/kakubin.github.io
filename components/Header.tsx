@@ -11,7 +11,7 @@ const Header: NextPage = () => {
           </a>
         </Link>
         <div className="site-nav">
-          <ul>
+          <div className="nav-items">
             <Link href="/about_me">
               <a>About Me</a>
             </Link>
@@ -21,7 +21,7 @@ const Header: NextPage = () => {
             <Link href="https://github.com/kakubin">
               <a target="_blank" rel="noreferrer">GitHub</a>
             </Link>
-          </ul>
+          </div>
         </div>
       </div>
     </div>

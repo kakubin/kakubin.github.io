@@ -6,4 +6,8 @@
 .container {
   width: 760px;
   margin: 0 auto;
+
+  @include sp {
+    width: 100%;
+  }
 }

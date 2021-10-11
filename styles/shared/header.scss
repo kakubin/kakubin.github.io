@@ -41,9 +41,10 @@
 .site-nav {
   height: 30px;
 
-  ul {
+  .nav-items {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 1rem;
 
     @include sp {
       padding: 0;
