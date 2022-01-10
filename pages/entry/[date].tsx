@@ -1,6 +1,6 @@
 import { GetStaticPaths } from 'next'
 import { entryDateSet, entries } from '../../lib/entry_files'
-import marked from 'marked'
+import { marked } from 'marked'
 
 type Props = {
   entry: Entry
@@ -17,7 +17,7 @@ export const getStaticProps = async ({ params }: { params: { date: string } }) =
   return { props: { entry } }
 }
 
-const Markup = (content: string) => ({ __html: marked(content) })
+const Markup = (content: string) => ({ __html: marked.parse(content) })
 
 const EntryPage = ({ entry }: Props) => {
   return (
