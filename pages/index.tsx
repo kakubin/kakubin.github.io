@@ -5,7 +5,7 @@ type Props = {
   entries: EntryMetaData[]
 }
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   return {
     props: { entries },
   }
