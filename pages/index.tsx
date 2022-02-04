@@ -1,5 +1,5 @@
 import EntryCard from '../components/EntryCard'
-import { entries } from '../lib/entry_files'
+import { entries } from '../lib/entryFile'
 
 type Props = {
   entries: EntryMetaData[]

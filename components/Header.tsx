@@ -7,7 +7,7 @@ const Header: NextPage = () => {
       <div className="header-container">
         <Link href="/">
           <a className="header-title">
-            Kakubin&apos;s Blog
+            Untitled
           </a>
         </Link>
         <div className="site-nav">

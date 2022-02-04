@@ -1,30 +1,17 @@
-import { GetStaticPaths } from 'next'
-import { entryDateSet, entries } from '../../lib/entry_files'
-import { marked } from 'marked'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { entryFilenames, rmExtension, entries } from '../../lib/entryFile'
+import { parseMarkdown } from '../../lib/markdown'
 
-type Props = {
+type EntryProps = {
   entry: Entry
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = entryDateSet
-  return { paths, fallback: false }
-}
-
-export const getStaticProps = async ({ params }: { params: { date: string } }) => {
-  const date = params.date
-  const entry = entries.find((entry) => entry.date === date)
-  return { props: { entry } }
-}
-
-const Markup = (content: string) => ({ __html: marked.parse(content) })
-
-const EntryPage = ({ entry }: Props) => {
+const EntryPage = ({ entry }: EntryProps) => {
   return (
     <div className="entry-page">
       <div className="container">
         <div className="entry-body">
-          <div dangerouslySetInnerHTML={Markup(entry.content)} />
+          <div dangerouslySetInnerHTML={parseMarkdown(entry.content)} />
         </div>
       </div>
     </div>
@@ -32,3 +19,18 @@ const EntryPage = ({ entry }: Props) => {
 }
 
 export default EntryPage
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const date = params!.date
+  const entry = entries.find((entry) => entry.date === date) as Entry
+  return { props: { entry } }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = entryFilenames.map((filename) => {
+    const date = rmExtension(filename)
+    return { params: { date } }
+  })
+
+  return { paths, fallback: false }
+}
