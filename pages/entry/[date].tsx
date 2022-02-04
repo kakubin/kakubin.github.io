@@ -1,23 +1,10 @@
-import { GetStaticPaths } from 'next'
-import { entryDateSet, entries } from '../../lib/entry_files'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { entryFilenames, rmExtension, entries } from '../../lib/entryFile'
 import { marked } from 'marked'
 
 type Props = {
   entry: Entry
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = entryDateSet
-  return { paths, fallback: false }
-}
-
-export const getStaticProps = async ({ params }: { params: { date: string } }) => {
-  const date = params.date
-  const entry = entries.find((entry) => entry.date === date)
-  return { props: { entry } }
-}
-
-const Markup = (content: string) => ({ __html: marked.parse(content) })
 
 const EntryPage = ({ entry }: Props) => {
   return (
@@ -31,4 +18,27 @@ const EntryPage = ({ entry }: Props) => {
   )
 }
 
+const Markup = (content: string) => ({ __html: marked.parse(content) })
+
 export default EntryPage
+
+type Params = {
+  params: {
+    date: string
+  }
+}
+
+export const getStaticProps = async ({ params }: Params) => {
+  const date = params.date
+  const entry = entries.find((entry) => entry.date === date)
+  return { props: { entry } }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = entryFilenames.map((filename) => {
+    const date = rmExtension(filename)
+    return { params: { date } }
+  })
+
+  return { paths, fallback: false }
+}
