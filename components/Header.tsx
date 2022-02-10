@@ -15,9 +15,6 @@ const Header: NextPage = () => {
             <Link href="/about_me">
               <a>About Me</a>
             </Link>
-            <Link href="/biograph">
-              <a>Biograph</a>
-            </Link>
             <Link href="https://github.com/kakubin">
               <a target="_blank" rel="noreferrer">GitHub</a>
             </Link>
