@@ -18,7 +18,9 @@ const Layout: NextPage = ({ children, title = 'kakubin' }: Props) => {
       <Header>
       </Header>
       <div className='main'>
-        {children}
+        <div className='container'>
+          {children}
+        </div>
       </div>
     </>
   )

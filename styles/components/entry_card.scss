@@ -1,28 +1,26 @@
 .entry-card {
   width: 100%;
-  height: 120px;
-  border: 1px solid #999;
-  border-radius: 10px;
-  padding: 10px 30px;
-  margin: 0 0 30px 0;
-  transition: box-shadow 0.5s;
+  height: 50px;
+  margin: 0 0 10px 0;
+
+  @include pc {
+    height: 70px;
+    padding: 10px 30px;
+  }
 
   &:hover {
     color: #ff4500;
   }
 
-  .title-text {
+  .date-text {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .entry-text {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 30px;
-  }
-
-  .entry-date {
-    text-align: right;;
-  }
-
-  .date-text {
-    font-size: 20px;;
+    font-size: 1.3rem;
   }
 }

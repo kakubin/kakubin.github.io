@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "github-markdown-css": "^5.1.0",
     "gray-matter": "^4.0.3",
     "next": "12.0.10",
     "react": "17.0.2",

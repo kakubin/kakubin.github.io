@@ -23,10 +23,8 @@ const Index = (props: Props) => {
 
   return (
     <div className="index-page">
-      <div className="container">
-        <div className="entry-cards">
-          {entryCards}
-        </div>
+      <div className="entry-cards">
+        {entryCards}
       </div>
     </div>
   )
