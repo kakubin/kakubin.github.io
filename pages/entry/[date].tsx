@@ -9,10 +9,8 @@ type EntryProps = {
 const EntryPage = ({ entry }: EntryProps) => {
   return (
     <div className="entry-page">
-      <div className="container">
-        <div className="entry-body">
-          <div dangerouslySetInnerHTML={parseMarkdown(entry.content)} />
-        </div>
+      <div className="markdown-body">
+        <div dangerouslySetInnerHTML={parseMarkdown(entry.content)} />
       </div>
     </div>
   )

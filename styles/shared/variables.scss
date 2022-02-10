@@ -7,14 +7,8 @@ $sp-max-width: 400px;
   }
 }
 
-@mixin tablet {
-  @media only screen and (max-width: $pc-min-width - 1px) and (min-width: $sp-max-width + 1px) {
-    @content;
-  }
-}
-
 @mixin sp {
-  @media only screen and (max-width: $sp-max-width) {
+  @media only screen and (max-width: 766px) {
     @content;
   }
 }
