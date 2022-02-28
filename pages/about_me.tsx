@@ -19,7 +19,7 @@ const AboutMe = ({ aboutMe }: AboutMeProps) => {
 
 export default AboutMe
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<AboutMeProps> = async () => {
   const fileContents = matter(fs.readFileSync('./markdowns/about_me.md', 'utf-8'))
   return { props: { aboutMe: { content: fileContents.content } } }
 }
