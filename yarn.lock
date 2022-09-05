@@ -161,10 +161,10 @@
   resolved "https://registry.yarnpkg.com/@types/marked/-/marked-4.0.5.tgz#3e900fa331a9b1a98f7a8a50f0f39b4bf2b6469f"
   integrity sha512-jMN2moJ+lSf1VZXQo3VXeMCjoXuciVONig8+U0YNBop5aBvQw4qkolx1Nzn1i0T8L2l9IZ3jju6bS1pPwlaY1w==
 
-"@types/node@^18.7.6":
-  version "18.7.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.6.tgz#31743bc5772b6ac223845e18c3fc26f042713c83"
-  integrity sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==
+"@types/node@^18.7.15":
+  version "18.7.15"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.15.tgz#20ae1ec80c57ee844b469f968a1cd511d4088b29"
+  integrity sha512-XnjpaI8Bgc3eBag2Aw4t2Uj/49lLBSStHWfqKvIuXD7FIrZyMLWp8KuAFHAqxMZYTF9l08N1ctUn9YNybZJVmQ==
 
 "@types/prismjs@^1.26.0":
   version "1.26.0"
