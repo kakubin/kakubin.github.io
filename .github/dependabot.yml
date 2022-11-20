@@ -8,9 +8,9 @@ updates:
       time: '00:00'
     open-pull-requests-limit: 99
     reviewers:
-      - mrbigass
+      - kakubin
     assignees:
-      - mrbigass
+      - kakubin
     commit-message:
       prefix: fix
       prefix-development: chore
@@ -23,8 +23,8 @@ updates:
       time: '00:00'
     open-pull-requests-limit: 10
     reviewers:
-      - mrbigass
+      - kakubin
     assignees:
-      - mrbigass
+      - kakubin
     commit-message:
       prefix: fix
