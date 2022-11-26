@@ -24,8 +24,7 @@ const sortByDate = (entries: Entry[], desc = true): Entry[] => {
   return desc ? sortedEntries : sortedEntries.reverse()
 }
 
-export const entries = sortByDate(
-  entryFilenames.map(
-    filename => readMarkdown(entryFilepath(filename))
-  )
-)
+export const entries = () => {
+  const _entries = entryFilenames.map(filename => readMarkdown(entryFilepath(filename)))
+  return sortByDate(_entries)
+}
