@@ -28,3 +28,16 @@ jobs:
 
       - name: Build
         run: yarn build
+
+  auto-merge:
+    needs: build-test
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'dependabot[bot]'
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.0
+        with:
+          config: .github/dependabot-auto-merge.yml
+          github-token: ${{ secrets.GITHUB_TOKEN }}
