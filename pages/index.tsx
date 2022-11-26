@@ -1,11 +1,13 @@
 import EntryCard from '../components/EntryCard'
-import { entries } from '../lib/entryFile'
+import { entries as fetchEntries } from '../lib/entryFile'
 
 type Props = {
   entries: EntryMetaData[]
 }
 
 export const getStaticProps = async () => {
+  const entries = fetchEntries()
+
   return {
     props: { entries },
   }

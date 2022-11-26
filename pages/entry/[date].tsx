@@ -20,7 +20,7 @@ export default EntryPage
 
 export const getStaticProps: GetStaticProps<EntryProps> = async ({ params }) => {
   const date = params!.date
-  const entry = entries.find((entry) => entry.date === date) as Entry
+  const entry = entries().find((entry) => entry.date === date) as Entry
   return { props: { entry } }
 }
 
