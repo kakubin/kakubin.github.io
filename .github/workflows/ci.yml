@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.0
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.3
         with:
           config: .github/dependabot-auto-merge.yml
           github-token: ${{ secrets.GITHUB_TOKEN }}
