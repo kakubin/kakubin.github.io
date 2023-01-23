@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ja"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>kakubin</title><link rel="icon" href="/whiskey.svg"/><meta name="next-head-count" content="4"/><link rel="preload" href="/_next/static/css/7a1a5e64697b98c8.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7a1a5e64697b98c8.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-9b312e20a4e32339.js" defer=""></script><script src="/_next/static/chunks/framework-a87821de553db91d.js" defer=""></script><script src="/_next/static/chunks/main-250a0b3dc1fc1f02.js" defer=""></script><script src="/_next/static/chunks/pages/_app-bfa5703102f11de6.js" defer=""></script><script src="/_next/static/chunks/754-43194d5143f0a7d9.js" defer=""></script><script src="/_next/static/chunks/pages/entry/%5Bdate%5D-9f49324d893411db.js" defer=""></script><script src="/_next/static/uyqnZXfx7zUa6o-REri0Q/_buildManifest.js" defer=""></script><script src="/_next/static/uyqnZXfx7zUa6o-REri0Q/_ssgManifest.js" defer=""></script><script src="/_next/static/uyqnZXfx7zUa6o-REri0Q/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><div class="header"><div class="header-container"><a class="header-title" href="/">Untitled</a><div class="site-nav"><div class="nav-items"><a href="/about_me/">About Me</a><a target="_blank" rel="noreferrer" href="https://github.com/kakubin">GitHub</a></div></div></div></div><div class="main"><div class="container"><div class="entry-page"><div class="markdown-body"><div><h1 id="既存コードにrubocopを導入">既存コードにRubocopを導入</h1>
+<p>今の会社のコードにはRubocopが入っているがほとんど適用されていない状態なので
+インデントがめちゃくちゃだったり、シンタックスが適当だったりで可読性が低い。
+LSPにもめちゃくちゃに指摘されてファイル開くとエディタの画面が真っ赤っ赤。</p>
+<p>今から.rubocop.ymlを本格的に適用しようにもPullRequestが大量に立っているので
+何も考えずやってしまうとコンフリクトは避けられない。</p>
+<p>そこでPR内の変更ファイルに対してのみ新しいRubocopルールを適用させていけば
+コンフリクトもなくコードがきれいになるのではと考えた。</p>
+<p>結果、出来上がったのが以下のコード。</p>
+<pre><code class="language-language-ruby"># lib/tasks/rubocop.rake
+# frozen_string_literal: true
+
+require &#39;rubocop/rake_task&#39;
+
+module RubocopStrictTask
+  def setup_subtasks(name, *args, &amp;task_block)
+    namespace(name) do
+      desc &#39;PRの変更ファイルに対して走る強めのrubocop&#39;
+
+      task(:strict, *args) do |_, _task_args|
+        RakeFileUtils.verbose(verbose) do
+          options = full_options.dup
+
+          if diff_files.empty?
+            puts &#39;Rubocop: No Diff Files&#39;
+            exit
+          end
+
+          options.push &#39;-c&#39;, &#39;./.rubocop_strict.yml&#39;
+          options.push(*diff_files)
+          run_cli(verbose, options)
+        end
+      end
+    end
+
+    super
+  end
+
+  RuboCop::RakeTask.prepend self
+
+  private
+
+  def diff_files
+    @diff_files ||= `git diff --name-only --diff-filter=ACMR origin/master..HEAD -- &#39;*.rb&#39;`.split
+  end
+end
+
+RuboCop::RakeTask.new
+</code></pre>
+<p>.rubocop_strict.ymlに設定された新しいRubocopルールが
+origin/masterと差分のあるファイルのみに適用されるようになっていて、
+bundle exec rake rubocop:strictで実行できる。</p>
+<p>結果、通常のPRの運用でApproveをもらったら、origin/masterを作業ブランチへマージした後に
+このRakeタスクで修正してもらい再度pushするという流れになった。</p>
+</div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"entry":{"title":"既存コードにRubocopを導入","date":"2022-05-21","content":"\n# 既存コードにRubocopを導入\n\n今の会社のコードにはRubocopが入っているがほとんど適用されていない状態なので\nインデントがめちゃくちゃだったり、シンタックスが適当だったりで可読性が低い。\nLSPにもめちゃくちゃに指摘されてファイル開くとエディタの画面が真っ赤っ赤。\n\n今から.rubocop.ymlを本格的に適用しようにもPullRequestが大量に立っているので\n何も考えずやってしまうとコンフリクトは避けられない。\n\nそこでPR内の変更ファイルに対してのみ新しいRubocopルールを適用させていけば\nコンフリクトもなくコードがきれいになるのではと考えた。\n\n結果、出来上がったのが以下のコード。\n\n```language-ruby\n# lib/tasks/rubocop.rake\n# frozen_string_literal: true\n\nrequire 'rubocop/rake_task'\n\nmodule RubocopStrictTask\n  def setup_subtasks(name, *args, \u0026task_block)\n    namespace(name) do\n      desc 'PRの変更ファイルに対して走る強めのrubocop'\n\n      task(:strict, *args) do |_, _task_args|\n        RakeFileUtils.verbose(verbose) do\n          options = full_options.dup\n\n          if diff_files.empty?\n            puts 'Rubocop: No Diff Files'\n            exit\n          end\n\n          options.push '-c', './.rubocop_strict.yml'\n          options.push(*diff_files)\n          run_cli(verbose, options)\n        end\n      end\n    end\n\n    super\n  end\n\n  RuboCop::RakeTask.prepend self\n\n  private\n\n  def diff_files\n    @diff_files ||= `git diff --name-only --diff-filter=ACMR origin/master..HEAD -- '*.rb'`.split\n  end\nend\n\nRuboCop::RakeTask.new\n```\n\n.rubocop_strict.ymlに設定された新しいRubocopルールが\norigin/masterと差分のあるファイルのみに適用されるようになっていて、\nbundle exec rake rubocop:strictで実行できる。\n\n結果、通常のPRの運用でApproveをもらったら、origin/masterを作業ブランチへマージした後に\nこのRakeタスクで修正してもらい再度pushするという流れになった。\n"}},"__N_SSG":true},"page":"/entry/[date]","query":{"date":"2022-05-21"},"buildId":"uyqnZXfx7zUa6o-REri0Q","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

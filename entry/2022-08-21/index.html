@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="ja"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>kakubin</title><link rel="icon" href="/whiskey.svg"/><meta name="next-head-count" content="4"/><link rel="preload" href="/_next/static/css/7a1a5e64697b98c8.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7a1a5e64697b98c8.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/_next/static/chunks/webpack-9b312e20a4e32339.js" defer=""></script><script src="/_next/static/chunks/framework-a87821de553db91d.js" defer=""></script><script src="/_next/static/chunks/main-250a0b3dc1fc1f02.js" defer=""></script><script src="/_next/static/chunks/pages/_app-bfa5703102f11de6.js" defer=""></script><script src="/_next/static/chunks/754-43194d5143f0a7d9.js" defer=""></script><script src="/_next/static/chunks/pages/entry/%5Bdate%5D-9f49324d893411db.js" defer=""></script><script src="/_next/static/uyqnZXfx7zUa6o-REri0Q/_buildManifest.js" defer=""></script><script src="/_next/static/uyqnZXfx7zUa6o-REri0Q/_ssgManifest.js" defer=""></script><script src="/_next/static/uyqnZXfx7zUa6o-REri0Q/_middlewareManifest.js" defer=""></script></head><body><div id="__next"><div class="header"><div class="header-container"><a class="header-title" href="/">Untitled</a><div class="site-nav"><div class="nav-items"><a href="/about_me/">About Me</a><a target="_blank" rel="noreferrer" href="https://github.com/kakubin">GitHub</a></div></div></div></div><div class="main"><div class="container"><div class="entry-page"><div class="markdown-body"><div><h1 id="rubocop-grapeを作った">rubocop-grapeを作った</h1>
+<h2 id="モチベーション">モチベーション</h2>
+<p>弊社のサービスはRailsを使って開発されおり、
+特に<a href="https://github.com/ruby-grape/grape">Grape</a>というREST APIを簡単に作れるgemを使っている。</p>
+<p>なぜGrapeを使っているかは、はっきりとした理由は分からず誰かが詳しいからと導入したわけでもないため、かなりオレオレな感じになっている。
+また知見の偏りもあるため、APIをフルに活かしきれていないコーディングで、レビュワーは都度同じ指摘を何度もする必要がある。
+プロジェクトコードの規模はかなり膨れ上がりレビューも大変になったので解決する必要がある。</p>
+<p>そこで<a href="https://github.com/kakubin/rubocop-grape">rubocop-grape</a>というGrape用のRubocop拡張を作ってみた。</p>
+<h2 id="使い方">使い方</h2>
+<p>Gemfileからインストールして、.rubocop.ymlに<code>rubocop-grape</code>と追記したらそのまま使える。</p>
+<pre><code class="language-language-ruby">gem &#39;rubocop-grape&#39;, require: false
+</code></pre>
+<pre><code class="language-language-yaml">require:
+  - rubocop-grape
+</code></pre>
+<h2 id="効用">効用</h2>
+<p>まだルールは二つしか作れていないが、これを導入することで多少なり苦労がなくなるのではと思っている。
+さらにはGrapeに関するナレッジがこの拡張を介して他のプロダクトにも反映できれば一石二鳥である。
+一方でルールネタに尽きている。</p>
+</div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"entry":{"title":"rubocop-grapeを作った","date":"2022-08-21","content":"\n# rubocop-grapeを作った\n\n## モチベーション\n\n弊社のサービスはRailsを使って開発されおり、\n特に[Grape](https://github.com/ruby-grape/grape)というREST APIを簡単に作れるgemを使っている。\n\nなぜGrapeを使っているかは、はっきりとした理由は分からず誰かが詳しいからと導入したわけでもないため、かなりオレオレな感じになっている。\nまた知見の偏りもあるため、APIをフルに活かしきれていないコーディングで、レビュワーは都度同じ指摘を何度もする必要がある。\nプロジェクトコードの規模はかなり膨れ上がりレビューも大変になったので解決する必要がある。\n\nそこで[rubocop-grape](https://github.com/kakubin/rubocop-grape)というGrape用のRubocop拡張を作ってみた。\n\n\n## 使い方\n\nGemfileからインストールして、.rubocop.ymlに`rubocop-grape`と追記したらそのまま使える。\n```language-ruby\ngem 'rubocop-grape', require: false\n```\n\n```language-yaml\nrequire:\n  - rubocop-grape\n```\n\n\n## 効用\n\nまだルールは二つしか作れていないが、これを導入することで多少なり苦労がなくなるのではと思っている。\nさらにはGrapeに関するナレッジがこの拡張を介して他のプロダクトにも反映できれば一石二鳥である。\n一方でルールネタに尽きている。\n"}},"__N_SSG":true},"page":"/entry/[date]","query":{"date":"2022-08-21"},"buildId":"uyqnZXfx7zUa6o-REri0Q","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
