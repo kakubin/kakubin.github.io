@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "@types/marked": "^5.0.0",
+    "@types/marked": "^5.0.1",
     "@types/node": "^20.4.2",
     "@types/prismjs": "^1.26.0",
     "@types/react": "17.0.43",
