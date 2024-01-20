@@ -6,9 +6,6 @@ on:
       - master
   pull_request:
 
-permissions:
-  pull-requests: write
-
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -35,6 +32,9 @@ jobs:
   auto-merge:
     needs: build-test
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
 
     if: github.actor == 'dependabot[bot]'
 
