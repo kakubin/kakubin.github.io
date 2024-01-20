@@ -39,10 +39,7 @@ jobs:
     if: github.actor == 'dependabot[bot]' && github.ref_name != 'master'
 
     steps:
-      - uses: actions/checkout@v4
       - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.6
         with:
           config: .github/dependabot-auto-merge.yml
-          github-token: '$GITHUB_TOKEN'
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEPENDABOT_AUTO_MERGE }}
+          github-token: '${{ secrets.DEPENDABOT_AUTO_MERGE }}'
