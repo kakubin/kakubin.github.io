@@ -39,7 +39,10 @@ jobs:
     if: github.actor == 'dependabot[bot]' && github.ref_name != 'master'
 
     steps:
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.6
-        with:
-          config: .github/dependabot-auto-merge.yml
-          github-token: '${{ secrets.DEPENDABOT_AUTO_MERGE }}'
+      - name: merge
+        run: |
+          gh pr review --approve "$PR_URL"
+          gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
