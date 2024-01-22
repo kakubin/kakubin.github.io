@@ -7,10 +7,6 @@ updates:
       interval: daily
       time: '00:00'
     open-pull-requests-limit: 99
-    reviewers:
-      - kakubin
-    assignees:
-      - kakubin
     commit-message:
       prefix: fix
       prefix-development: chore
@@ -22,9 +18,5 @@ updates:
       interval: monthly
       time: '00:00'
     open-pull-requests-limit: 10
-    reviewers:
-      - kakubin
-    assignees:
-      - kakubin
     commit-message:
       prefix: fix
