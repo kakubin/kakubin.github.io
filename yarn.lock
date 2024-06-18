@@ -1213,10 +1213,10 @@ get-tsconfig@^4.2.0:
   resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.2.0.tgz#ff368dd7104dab47bf923404eb93838245c66543"
   integrity sha512-X8u8fREiYOE6S8hLbq99PeykTDoLVnxvF4DjWKJmz9xy2nNRdUcV8ZN9tniJFeKyTU3qnC9lL8n4Chd6LmVKHg==
 
-github-markdown-css@^5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/github-markdown-css/-/github-markdown-css-5.6.0.tgz#7fc34d6128522d5bf7b149476500be19ae217614"
-  integrity sha512-bI+F5IeR/Ziqg06nmM2nUWBPbZKJRktDRhgAZXYTOHJYy0i4z43cvQAIySr4frpT7eoOuvzVdUbeaPOR2xCNFQ==
+github-markdown-css@^5.6.1:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/github-markdown-css/-/github-markdown-css-5.6.1.tgz#8ca3d5c3d93d79ea429fddafea091347ab374f78"
+  integrity sha512-DItLFgHd+s7HQmk63YN4/TdvLeRqk1QP7pPKTTPrDTYoI5x7f/luJWSOZxesmuxBI2srHp8RDyoZd+9WF+WK8Q==
 
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"
