@@ -14,7 +14,7 @@
     "@types/node": "^24.0.13",
     "@types/prismjs": "^1.26.5",
     "@types/react": "17.0.43",
-    "eslint": "9.30.1",
+    "eslint": "9.31.0",
     "eslint-config-next": "15.3.5",
     "github-markdown-css": "^5.8.1",
     "gray-matter": "^4.0.3",
