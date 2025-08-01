@@ -18,7 +18,7 @@
     "eslint-config-next": "15.4.5",
     "github-markdown-css": "^5.8.1",
     "gray-matter": "^4.0.3",
-    "marked": "^5.1.2",
+    "marked": "^16.1.1",
     "next": "15.4.5",
     "prismjs": "^1.30.0",
     "react": "18.1.0",
