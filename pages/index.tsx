@@ -14,20 +14,13 @@ export const getStaticProps = async () => {
 }
 
 const Index = (props: Props) => {
-  const entryCards = props.entries.map(
-    (entry) =>
-      <EntryCard
-        key={entry.title}
-        title={entry.title}
-        date={entry.date}
-      />
-  )
+  const entryCards = props.entries.map((entry) => (
+    <EntryCard key={entry.title} title={entry.title} date={entry.date} />
+  ))
 
   return (
     <div className="index-page">
-      <div className="entry-cards">
-        {entryCards}
-      </div>
+      <div className="entry-cards">{entryCards}</div>
     </div>
   )
 }

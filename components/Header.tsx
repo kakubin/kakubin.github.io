@@ -1,4 +1,4 @@
-import { NextPage } from "next"
+import type { NextPage } from 'next'
 import Link from 'next/link'
 
 const Header: NextPage = () => {
@@ -6,9 +6,7 @@ const Header: NextPage = () => {
     <div className="header">
       <div className="header-container">
         <Link href="/">
-          <a className="header-title">
-            Untitled
-          </a>
+          <a className="header-title">Untitled</a>
         </Link>
         <div className="site-nav">
           <div className="nav-items">
@@ -16,7 +14,9 @@ const Header: NextPage = () => {
               <a>About Me</a>
             </Link>
             <Link href="https://github.com/kakubin">
-              <a target="_blank" rel="noreferrer">GitHub</a>
+              <a target="_blank" rel="noreferrer">
+                GitHub
+              </a>
             </Link>
           </div>
         </div>

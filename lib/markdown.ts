@@ -12,4 +12,6 @@ import { marked } from 'marked'
 //   langPrefix: 'language-',
 // });
 
-export const parseMarkdown = (content: string) => ({ __html: marked.parse(content) })
+export const parseMarkdown = (content: string) => ({
+  __html: marked.parse(content),
+})
