@@ -1,6 +1,6 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import Head from 'next/head'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import Header from './Header'
 
 type Props = {
@@ -15,12 +15,9 @@ const Layout: NextPage = ({ children, title = 'kakubin' }: Props) => {
         <title>{title}</title>
         <link rel="icon" href="/whiskey.svg" />
       </Head>
-      <Header>
-      </Header>
-      <div className='main'>
-        <div className='container'>
-          {children}
-        </div>
+      <Header></Header>
+      <div className="main">
+        <div className="container">{children}</div>
       </div>
     </>
   )
