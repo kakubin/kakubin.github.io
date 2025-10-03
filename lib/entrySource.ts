@@ -2,22 +2,22 @@ import fs from 'node:fs'
 import matter from 'gray-matter'
 import { formatDate } from './formatDate'
 
-const entryFilenames = fs.readdirSync('./markdowns/entry/') as string[]
+const entryFilenames = fs.readdirSync('./markdowns/entry/')
 
-const entryFilepath = (entryFilename: string): string =>
+const entryFilepath = (entryFilename: string) =>
   `./markdowns/entry/${entryFilename}`
 
-export const readMarkdown = (filepath: string) => {
+export const readMarkdown = (filepath: string): Entry => {
   const fileContents = matter(fs.readFileSync(filepath, 'utf-8'))
 
   return {
     title: fileContents.data.title,
     date: formatDate(fileContents.data.date),
     content: fileContents.content,
-  } as Entry
+  }
 }
 
-const sortByDate = (entries: Entry[], desc = true): Entry[] => {
+const sortByDate = (entries: Entry[], desc = true) => {
   const sortedEntries = entries.sort(
     (a, b) => Date.parse(b.date) - Date.parse(a.date),
   )
