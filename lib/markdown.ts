@@ -1,5 +1,5 @@
 // import prism from 'prismjs'
-import { marked } from 'marked'
+import { parse } from 'marked'
 
 // marked.setOptions({
 //   highlight: function(code, lang) {
@@ -13,5 +13,5 @@ import { marked } from 'marked'
 // });
 
 export const parseMarkdown = (content: string) => ({
-  __html: marked.parse(content),
+  __html: parse(content, { async: false }),
 })
