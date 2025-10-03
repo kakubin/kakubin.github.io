@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "@types/marked": "^5.0.1",
     "@types/node": "^24.6.2",
     "@types/prismjs": "^1.26.5",
     "@types/react": "17.0.43",
@@ -17,7 +16,7 @@
     "eslint-config-next": "15.5.4",
     "github-markdown-css": "^5.8.1",
     "gray-matter": "^4.0.3",
-    "marked": "^5.1.2",
+    "marked": "^10.0.0",
     "next": "15.5.4",
     "prismjs": "^1.30.0",
     "react": "18.1.0",
