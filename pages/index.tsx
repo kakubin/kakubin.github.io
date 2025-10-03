@@ -1,5 +1,5 @@
 import EntryCard from '../components/EntryCard'
-import { entries as fetchEntries } from '../lib/entryFile'
+import { entries as fetchEntries } from '../lib/entrySource'
 
 type Props = {
   entries: EntryMetaData[]

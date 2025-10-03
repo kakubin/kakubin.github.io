@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
-import { entryFilenames, rmExtension, entries } from '../../lib/entryFile'
+import { entryFilenames, rmExtension, entries } from '../../lib/entrySource'
 import { parseMarkdown } from '../../lib/markdown'
 
 type EntryProps = {
