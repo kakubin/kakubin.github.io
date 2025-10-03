@@ -17,12 +17,10 @@ export const readMarkdown = (filepath: string): Entry => {
   }
 }
 
-const sortByDate = (entries: Entry[], desc = true) => {
-  const sortedEntries = entries.sort(
+const sortByDate = (entries: Entry[]) => {
+  return entries.sort(
     (a, b) => Date.parse(b.date) - Date.parse(a.date),
   )
-
-  return desc ? sortedEntries : sortedEntries.reverse()
 }
 
 export const entries = () => {
