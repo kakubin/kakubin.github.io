@@ -17,15 +17,8 @@ export const readMarkdown = (filepath: string): Entry => {
   }
 }
 
-const sortByDate = (entries: Entry[]) => {
-  return entries.sort(
-    (a, b) => Date.parse(b.date) - Date.parse(a.date),
-  )
-}
-
 export const entries = () => {
-  const _entries = entryFilenames.map((filename) =>
-    readMarkdown(entryFilepath(filename)),
-  )
-  return sortByDate(_entries)
+  return entryFilenames
+    .map((filename) => readMarkdown(entryFilepath(filename)))
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 }
