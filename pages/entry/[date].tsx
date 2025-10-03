@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
-import { entryFilenames, rmExtension, entries } from '../../lib/entryFile'
+import { entries } from '../../lib/entrySource'
 import { parseMarkdown } from '../../lib/markdown'
 
 type EntryProps = {
@@ -29,8 +29,7 @@ export const getStaticProps: GetStaticProps<EntryProps> = async ({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = entryFilenames.map((filename) => {
-    const date = rmExtension(filename)
+  const paths = entries().map(({ date }) => {
     return { params: { date } }
   })
 
