@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import type { ReactNode } from 'react'
 import Header from './Header'
@@ -8,7 +7,7 @@ type Props = {
   title?: string
 }
 
-const Layout: NextPage = ({ children, title = 'kakubin' }: Props) => {
+const Layout = ({ children, title = 'kakubin' }: Props) => {
   return (
     <>
       <Head>
