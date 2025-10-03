@@ -6,17 +6,17 @@ const Header: NextPage = () => {
     <div className="header">
       <div className="header-container">
         <Link href="/">
-          <a className="header-title">Untitled</a>
+          <div className="header-title">Untitled</div>
         </Link>
         <div className="site-nav">
           <div className="nav-items">
             <Link href="/about_me">
-              <a>About Me</a>
+              <div>About Me</div>
             </Link>
-            <Link href="https://github.com/kakubin">
-              <a target="_blank" rel="noreferrer">
+            <Link href="https://github.com/kakubin" target="_blank"  rel="noreferrer">
+              <div>
                 GitHub
-              </a>
+              </div>
             </Link>
           </div>
         </div>

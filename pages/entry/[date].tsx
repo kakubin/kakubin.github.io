@@ -7,6 +7,7 @@ type EntryProps = {
 }
 
 const EntryPage = ({ entry }: EntryProps) => {
+  // biome-ignore-start lint/security/noDangerouslySetInnerHtml: no choice
   return (
     <div className="entry-page">
       <div className="markdown-body">
@@ -14,6 +15,7 @@ const EntryPage = ({ entry }: EntryProps) => {
       </div>
     </div>
   )
+  // biome-ignore-end lint/security/noDangerouslySetInnerHtml: no choice
 }
 
 export default EntryPage
@@ -21,7 +23,7 @@ export default EntryPage
 export const getStaticProps: GetStaticProps<EntryProps> = async ({
   params,
 }) => {
-  const date = params!.date
+  const date = params?.date
   const entry = entries().find((entry) => entry.date === date) as Entry
   return { props: { entry } }
 }
