@@ -2,9 +2,7 @@ import fs from 'node:fs'
 import matter from 'gray-matter'
 import { formatDate } from './formatDate'
 
-export const entryFilenames = fs.readdirSync('./markdowns/entry/') as string[]
-export const rmExtension = (filename: string): string =>
-  filename.replace(/\.md$/, '')
+const entryFilenames = fs.readdirSync('./markdowns/entry/') as string[]
 
 const entryFilepath = (entryFilename: string): string =>
   `./markdowns/entry/${entryFilename}`
