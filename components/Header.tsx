@@ -13,10 +13,12 @@ const Header: NextPage = () => {
             <Link href="/about_me">
               <div>About Me</div>
             </Link>
-            <Link href="https://github.com/kakubin" target="_blank"  rel="noreferrer">
-              <div>
-                GitHub
-              </div>
+            <Link
+              href="https://github.com/kakubin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div>GitHub</div>
             </Link>
           </div>
         </div>
