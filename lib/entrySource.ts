@@ -19,6 +19,7 @@ export const readMarkdown = (filepath: string): Entry => {
 
 export const entries = () => {
   return entryFilenames
-    .map((filename) => readMarkdown(entryFilepath(filename)))
+    .map(entryFilepath)
+    .map(readMarkdown)
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
 }

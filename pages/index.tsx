@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
 
 const Index = (props: Props) => {
   const entryCards = props.entries.map((entry) => (
-    <EntryCard key={entry.title} title={entry.title} date={entry.date} />
+    <EntryCard {...entry} key={entry.title} />
   ))
 
   return (
