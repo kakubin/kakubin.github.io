@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.2",
-    "@types/node": "^24.9.1",
+    "@types/node": "^24.9.2",
     "@types/prismjs": "^1.26.5",
     "@types/react": "19.2.2",
     "github-markdown-css": "^5.8.1",
